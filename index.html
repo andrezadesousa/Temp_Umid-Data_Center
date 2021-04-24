@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>Data Center TempSmart</title>
+    <script language="javascript" type="text/javascript">
+        function validar() {
+            var temp = dc_Forms.temp.value;
+            var umid = dc_Forms.umid.value;
+
+            if ((temp == "") || (umid == "")) {
+                alert('Preencha o campo com a temperatura e umidade atual do Data Center');
+                dc_Forms.temp.focus();
+                return false;
+            }          
+        }
+    </script>
+</head>
+<body>
+    <div class="forms">
+        <div class="forms_content">
+            <div class="forms_img">
+                <img src="image/img.svg" alt="">
+            </div><!--forms_img-->
+
+            <div class="dados_forms">
+                <form name="dc_Forms" action="dados.php" method="POST" class="forms_registre">
+                    <h1 class="forms_title">Data Center TempSmart</h1>
+
+                    <div class="forms_box">
+                        <i class='bx bxs-paint' ></i>
+                        <input type="text" placeholder="Temperatura atual" id="temp" name="temp" class="forms_input">
+                    </div><!--forms_box-->
+
+                    <div class="forms_box">
+                        <i class='bx bxs-paint' ></i>
+                        <input type="text" placeholder="Umidade atual" id="umid" name="umid" class="forms_input">
+                    </div><!--forms_box-->
+
+                    <input type="submit" value="Verificar" name="button" id="forms_button" onclick="return validar()">                    
+                </form>
+            </div><!--forms_forms-->
+        </div><!--forms_content-->
+    </div><!--forms-->   
+</body>
+</html>
